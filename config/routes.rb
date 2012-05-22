@@ -4,7 +4,8 @@ Twqa::Application.routes.draw do
   match "/leaderboard/player_position/:player_id" => "leaderboards#player_position"
 
   get "/reports" => "reports#index"
-  get "/reports/download"
+  get "/reports/players"
+  get "/reports/answered_correctly"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

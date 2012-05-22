@@ -18,7 +18,7 @@ describe Question do
       question[:choices].should be_include('2')
       question[:choices].should be_include('3')
       question[:choices].should be_include('4')
-      Question.find_by_sql('select count(*) as num from questions').first.num.should == '1'
+      Question.find_by_sql('select count(*) as num from questions').first.num.should == 1
     end
 
     it 'should not load questions from csv when questions exist in the db' do

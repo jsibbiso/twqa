@@ -30,23 +30,44 @@ describe ReportsController do
 
   end
 
-  describe "GET 'download'" do
+  describe "GET 'players'" do
     it "should return http failure when not enter credential" do
-      get 'download'
+      get 'players'
       response.should_not be_success
     end
 
     it "should return http failure after entered user credential" do
       user_auth
-      get 'download'
+      get 'players'
       response.should_not be_success
     end
 
     it "returns http success after entered admin credential" do
       admin_auth
-      get 'download'
+      get 'players'
       response.should be_success
       response.headers['Content-Disposition'].should include 'filename="player_data.csv"'
+      response.headers['Content-Type'].should include 'text/csv'
+    end
+  end
+  
+  describe "GET 'answered_correctly'" do
+    it "should return http failure when not enter credential" do
+      get 'answered_correctly'
+      response.should_not be_success
+    end
+
+    it "should return http failure after entered user credential" do
+      user_auth
+      get 'answered_correctly'
+      response.should_not be_success
+    end
+
+    it "returns http success after entered admin credential" do
+      admin_auth
+      get 'answered_correctly'
+      response.should be_success
+      response.headers['Content-Disposition'].should include 'filename="answered_correctly_data.csv"'
       response.headers['Content-Type'].should include 'text/csv'
     end
   end
