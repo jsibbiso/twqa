@@ -32,10 +32,10 @@ ActiveRecord::Schema.define(:version => 20120528063122) do
   end
 
   create_table "questions", :force => true do |t|
-    t.text   "question",           :null => false
-    t.string "correct_answer",     :null => false
-    t.string "incorrect_answer_1", :null => false
-    t.string "incorrect_answer_2", :null => false
+    t.text   "question",           :limit => 255, :null => false
+    t.string "correct_answer",                    :null => false
+    t.string "incorrect_answer_1",                :null => false
+    t.string "incorrect_answer_2",                :null => false
   end
 
   create_table "timers", :id => false, :force => true do |t|
