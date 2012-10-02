@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
 gem 'composite_primary_keys'
+gem 'sqlite3'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
@@ -22,7 +23,6 @@ gem 'formtastic', '~> 2.1.1'
 group :development, :test do
   gem "pg"
 	gem "rspec-rails"
-  gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'capybara'
 end
 group :production do
